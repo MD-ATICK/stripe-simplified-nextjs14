@@ -51,11 +51,6 @@ export default function PurchaseButton({ courseId }: props) {
         }
     }
 
-
-    if (!userAccess || !userData) {
-        return <Button variant={'outline'} > <Loading /> </Button>
-    }
-
     if (userAccess && !userAccess.hasAccess) {
         return <SignInButton mode="modal">
             <Button variant={'outline'} disabled={isPending} onClick={handlePurchase}>{isPending ? <Loading /> : 'Enroll Now'}</Button>
